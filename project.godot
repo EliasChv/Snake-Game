@@ -22,4 +22,4 @@ project/assembly_name="Snake-Game"
 [rendering]
 
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0.376471, 0.533333, 0.192157, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

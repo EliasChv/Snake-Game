@@ -35,16 +35,17 @@ public partial class Snake : Control
     {
         Vector2 center = ScreenSize / 2f - BoardSize * tileSize / 2f;
 
-        for ( int i = 0; i < BoardSize.X; i++ ) for ( int j = 0; j < BoardSize.Y; j++ ) {
-            DrawRect( new( center.X + i * tileSize, center.Y + j * tileSize, tileSize, tileSize ), ( i + j ) % 2 == 0 ? new( 172f / 255, 206f / 255, 94f / 255 ) : new( 114f / 255, 183f / 255, 106f / 255 ) );
-        }
+        for (int i = 0; i < BoardSize.X; i++) for (int j = 0; j < BoardSize.Y; j++)
+            {
+                DrawRect(new(center.X + i * tileSize, center.Y + j * tileSize, tileSize, tileSize), (i + j) % 2 == 0 ? new(0.41f, 0.41f, 0.41f) : new(0.25f, 0.25f, 0.25f));
+            }
 
         foreach ( Body body in SnakeBody ) {
-            DrawRect( new( center + body.Location * tileSize, tileSize, tileSize ), new( 90f / 255, 127f / 255, 255f / 255 ) );
+            DrawRect( new( center + body.Location * tileSize, tileSize, tileSize ), new(1f, 1f, 1f) );
         }
 
-        DrawTextureRect( fruitSprite, new( center + Fruit * tileSize, tileSize, tileSize ), true );
-        // DrawCircle( center + Fruit * tileSize + Vector2.One * tileSize / 2, tileSize / 2 * 0.75f, new( 255f / 255, 115f / 255, 118f / 255 ), true );
+        //DrawTextureRect( fruitSprite, new( center + Fruit * tileSize, tileSize, tileSize ), true );
+         DrawCircle( center + Fruit * tileSize + Vector2.One * tileSize / 2, tileSize / 2 * 0.75f, new(1f, 1f, 1f), true );
     }
 
     public override void _Process(double delta)
